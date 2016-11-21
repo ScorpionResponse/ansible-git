@@ -1,0 +1,17 @@
+---
+- name: Detect git installation
+  stat: 
+    path: /usr/bin/git
+  register: git_installed
+
+- name: Install on Apt based system
+  include: install-apt.yml
+  when: 
+    - ansible_pkg_mgr == 'apt'
+    - git_installed.stat.exists == false
+
+- name: Install on Yum based system
+  include: install-yum.yml
+  when:
+    - ansible_pkg_mgr == 'yum'
+    - git_installed.stat.exists == false
