@@ -3,7 +3,7 @@ Ansible Role: Git
 
 [![Build Status](https://travis-ci.org/ScorpionResponse/ansible-git.svg?branch=master)](https://travis-ci.org/ScorpionResponse/ansible-git)
 
-Simplest possible role to install git via apt (current version only).
+Simplest possible role to install git (current version only).
 
 Requirements
 ------------
